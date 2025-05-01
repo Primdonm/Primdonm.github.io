@@ -8,7 +8,7 @@ from gencontent import generate_pages_recursive
 
 basepath = "/"
 dir_path_static = "./static"
-dir_path_public = "/"
+dir_path_public = "./docs"
 #dir_path_public = "./public"
 dir_path_content = "./content"
 template_path = "./template.html"
@@ -26,6 +26,10 @@ def main():
 
     print("Generating content...")
     generate_pages_recursive(dir_path_content, template_path, dir_path_public, basepath)
+
+    print("Creating .nojekyll file...")
+    open(os.path.join(dir_path_public, ".nojekyll"), "w").close()
+
    # generate_pages_recursive(content_dir, template_dir, output_dir, basepath)
 
 
