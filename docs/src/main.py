@@ -7,11 +7,14 @@ from copystatic import copy_files_recursive
 from gencontent import generate_pages_recursive
 
 basepath = "/"
-dir_path_static = "./static"
-dir_path_public = "./docs"
-#dir_path_public = "./public"
-dir_path_content = "./content"
-template_path = "./template.html"
+repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+
+dir_path_static = os.path.join(repo_root, "static")
+dir_path_public = os.path.join(repo_root, "docs")
+dir_path_content = os.path.join(repo_root, "content")
+template_path = os.path.join(repo_root, "template.html")
+
 
 if len(sys.argv) > 1:
     basepath = sys.argv[1]
